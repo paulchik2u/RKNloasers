@@ -1,0 +1,48 @@
+{
+  "name": "cs2",
+  "packet_size_min": 80,
+  "packet_size_max": 400,
+  "heartbeat_interval_ms": 25000,
+  "jitter_ms": 40,
+  "frequency_hz": 64,
+  "size_distribution": [
+    { "mean": 90.0, "std_dev": 15.0, "weight": 0.50 },
+    { "mean": 200.0, "std_dev": 50.0, "weight": 0.30 },
+    { "mean": 400.0, "std_dev": 80.0, "weight": 0.15 },
+    { "mean": 1000.0, "std_dev": 100.0, "weight": 0.05 }
+  ],
+  "timing_distribution": [
+    { "time_ms": 15.63, "probability": 0.65 },
+    { "time_ms": 31.25, "probability": 0.18 },
+    { "time_ms": 46.88, "probability": 0.10 },
+    { "time_ms": 100.0, "probability": 0.07 }
+  ],
+  "burst_patterns": [
+    {
+      "name": "shooting",
+      "packet_count_range": [5, 10],
+      "inter_packet_time_range": [5.0, 12.0],
+      "size_range": [80, 200],
+      "probability": 0.15
+    },
+    {
+      "name": "movement",
+      "packet_count_range": [2, 5],
+      "inter_packet_time_range": [14.0, 18.0],
+      "size_range": [80, 120],
+      "probability": 0.45
+    },
+    {
+      "name": "map_load",
+      "packet_count_range": [15, 30],
+      "inter_packet_time_range": [2.0, 8.0],
+      "size_range": [800, 1200],
+      "probability": 0.02
+    }
+  ],
+  "client_server_size_ratio": [0.50, 1.0],
+  "entropy_profile": {
+    "mean_entropy": 7.4,
+    "entropy_std": 0.2
+  }
+}

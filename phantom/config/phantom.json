@@ -1,0 +1,52 @@
+{
+  "signaling": {
+    "nostr_relays": [
+      "wss://relay.damus.io",
+      "wss://relay.snort.social",
+      "wss://nos.lol",
+      "wss://relay.nostr.band"
+    ],
+    "nostr_pubkey": "",
+    "doh_endpoint": "https://cloudflare-dns.com/dns-query",
+    "doh_domain": "cloudflare-dns.com"
+  },
+  "transport": {
+    "protocol": "quic",
+    "alpn": ["h3"],
+    "mtu": 1200
+  },
+  "masking": {
+    "protocol": "gaming",
+    "gaming_profile": null,
+    "heartbeat_interval_ms": 30000,
+    "jitter_ms": 50,
+    "packet_size_min": 60,
+    "packet_size_max": 1400
+  },
+  "encryption": {
+    "algorithm": "chacha20-poly1305",
+    "key_rotation_minutes": 60
+  },
+  "exit_nodes": [
+    {
+      "region": "us-east",
+      "provider": "cloudflare"
+    },
+    {
+      "region": "us-west",
+      "provider": "cloudflare"
+    },
+    {
+      "region": "eu-west",
+      "provider": "cloudflare"
+    },
+    {
+      "region": "eu-central",
+      "provider": "cloudflare"
+    },
+    {
+      "region": "ap-southeast",
+      "provider": "cloudflare"
+    }
+  ]
+}

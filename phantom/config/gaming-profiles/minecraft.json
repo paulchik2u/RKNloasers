@@ -1,0 +1,41 @@
+{
+  "name": "minecraft",
+  "packet_size_min": 100,
+  "packet_size_max": 1400,
+  "heartbeat_interval_ms": 20000,
+  "jitter_ms": 100,
+  "frequency_hz": 20,
+  "size_distribution": [
+    { "mean": 150.0, "std_dev": 40.0, "weight": 0.40 },
+    { "mean": 350.0, "std_dev": 80.0, "weight": 0.35 },
+    { "mean": 700.0, "std_dev": 150.0, "weight": 0.20 },
+    { "mean": 1200.0, "std_dev": 100.0, "weight": 0.05 }
+  ],
+  "timing_distribution": [
+    { "time_ms": 50.0, "probability": 0.50 },
+    { "time_ms": 100.0, "probability": 0.25 },
+    { "time_ms": 200.0, "probability": 0.15 },
+    { "time_ms": 500.0, "probability": 0.10 }
+  ],
+  "burst_patterns": [
+    {
+      "name": "chunk_load",
+      "packet_count_range": [10, 25],
+      "inter_packet_time_range": [5.0, 20.0],
+      "size_range": [500, 1400],
+      "probability": 0.05
+    },
+    {
+      "name": "entity_update",
+      "packet_count_range": [3, 8],
+      "inter_packet_time_range": [40.0, 60.0],
+      "size_range": [100, 400],
+      "probability": 0.25
+    }
+  ],
+  "client_server_size_ratio": [0.45, 1.0],
+  "entropy_profile": {
+    "mean_entropy": 6.8,
+    "entropy_std": 0.4
+  }
+}

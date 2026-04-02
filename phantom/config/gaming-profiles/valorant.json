@@ -1,0 +1,40 @@
+{
+  "name": "valorant",
+  "packet_size_min": 60,
+  "packet_size_max": 300,
+  "heartbeat_interval_ms": 30000,
+  "jitter_ms": 50,
+  "frequency_hz": 60,
+  "size_distribution": [
+    { "mean": 75.0, "std_dev": 12.0, "weight": 0.55 },
+    { "mean": 180.0, "std_dev": 40.0, "weight": 0.30 },
+    { "mean": 280.0, "std_dev": 20.0, "weight": 0.15 }
+  ],
+  "timing_distribution": [
+    { "time_ms": 16.67, "probability": 0.70 },
+    { "time_ms": 33.33, "probability": 0.15 },
+    { "time_ms": 50.0, "probability": 0.10 },
+    { "time_ms": 100.0, "probability": 0.05 }
+  ],
+  "burst_patterns": [
+    {
+      "name": "shooting",
+      "packet_count_range": [5, 10],
+      "inter_packet_time_range": [5.0, 15.0],
+      "size_range": [60, 150],
+      "probability": 0.12
+    },
+    {
+      "name": "movement",
+      "packet_count_range": [2, 4],
+      "inter_packet_time_range": [15.0, 20.0],
+      "size_range": [60, 100],
+      "probability": 0.40
+    }
+  ],
+  "client_server_size_ratio": [0.55, 1.0],
+  "entropy_profile": {
+    "mean_entropy": 7.2,
+    "entropy_std": 0.3
+  }
+}

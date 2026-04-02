@@ -1,0 +1,12 @@
+name = "phantom-relay"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+EXIT_NODE_URL = "https://your-exit-node.example.com"
+
+[limits]
+cpu_ms = 10
+
+[observability]
+enabled = false
